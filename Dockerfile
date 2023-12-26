@@ -15,6 +15,7 @@ RUN apk -v --no-cache --update add \
         wget \
         zip \
         git \
+        aws-cli \
         && \
     update-ca-certificates && \
     npm install -g typescript \
