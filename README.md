@@ -10,6 +10,9 @@ Run as a shell and mount `.aws` folder and current directory as volumes:
 
     docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/opt/app contino/aws-cdk bash
 
+Windows
+    docker run -itd -v C:\Users\USERNAME\.aws -v D:\Development:/home/projeto --name aws_cdk contino/aws-cdk:1.91.0 bash    
+
 Using docker-compose:
 
     cdk:
