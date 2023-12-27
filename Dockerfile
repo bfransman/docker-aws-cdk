@@ -21,10 +21,11 @@ RUN apk -v --no-cache --update add \
     update-ca-certificates && \
     npm install -g typescript \
     npm install -g aws-cdk@${AWS_CDK_VERSION}
-
+SHELL ["/bin/bash", "-c"]
 RUN sed -i 's@ash@bash@g' /etc/passwd
 RUN echo "source /etc/bash/bash_completion.sh" >> ~/.bash_profile
 RUN echo "export PATH=/usr/bin/aws_completer:$PATH" >> ~/.bash_profile
+RUN source /etc/bash/bash_completion.sh
 RUN complete -C '/usr/bin/aws_completer' aws
 RUN git config --global user.email "bryan@fransman.com"
 RUN git config --global user.name "Bryan Fransman"
